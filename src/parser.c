@@ -359,7 +359,7 @@ maxpool_layer parse_maxpool(list *options, size_params params)
 {
     int stride = option_find_int(options, "stride",1);
     int size = option_find_int(options, "size",stride);
-    int padding = option_find_int_quiet(options, "padding", (size-1)/2);
+    int padding = 0; //option_find_int_quiet(options, "padding", (size-1)/2);
 
     int batch,h,w,c;
     h = params.h;

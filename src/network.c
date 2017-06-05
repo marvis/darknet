@@ -355,6 +355,8 @@ int resize_network(network *net, int w, int h)
             resize_normalization_layer(&l, w, h);
         }else if(l.type == COST){
             resize_cost_layer(&l, inputs);
+        }else if(l.type == SHORTCUT){
+            resize_shortcut_layer(&l, w, h, net);
         }else{
             error("Cannot resize this type of layer");
         }
